@@ -1,0 +1,177 @@
+:root {
+  --text-primary: hsl(229, 23%, 23%);
+  --text-secondary: hsl(227, 10%, 46%);
+  --background-primary: hsl(185, 75%, 39%);
+  --background-secondary: hsl(0, 0%, 100%);
+  --accent-primary: hsl(0, 0%, 59%);
+  --font-size-600: 1.8rem;
+  --font-size-500: 1.4rem;
+  --font-size-400: 1rem;
+  --font-family-default: "Kumbh Sans", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  font-family: var(--font-family-default);
+  font-size: var(--font-size-600);
+  color: var(--text-primary);
+  background-color: var(--background-primary);
+}
+
+h1 {
+  font-size: var(--font-size-600);
+}
+
+h2 {
+  font-size: var(--font-size-400);
+}
+
+.h_wrapper {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.h_wrapper::before {
+  content: "";
+  position: absolute;
+  left: -19.79%;
+  right: 51.88%;
+  bottom: 35.14%;
+  width: 97.8rem;
+  height: 97.8rem;
+  background-image: url("./images/bg-pattern-top.svg");
+  background-size: cover;
+  transition: 300ms ease;
+}
+
+.h_wrapper::after {
+  content: "";
+  position: absolute;
+  top: 52.22%;
+  left: 48.125%;
+  width: 97.8rem;
+  height: 97.8rem;
+  background-image: url("./images/bg-pattern-top.svg");
+  background-size: cover;
+  transition: 300ms ease;
+}
+
+.card {
+  position: relative;
+  z-index: 2;
+  width: 35rem;
+  background-color: var(--background-secondary);
+  border-radius: 1.5rem;
+  overflow: hidden;
+  transition: 300ms ease;
+}
+
+.card__background-img img,
+.card__pfp-container img {
+  vertical-align: middle;
+}
+
+.card__pfp-container {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 9.6rem;
+  height: 9.6rem;
+  margin: 0 auto;
+}
+
+.card__pfp-container img {
+  width: 100%;
+  border: 0.5rem solid var(--background-secondary);
+  border-radius: 99rem;
+  overflow: hidden;
+}
+
+.card__text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 7.2rem;
+  margin-bottom: 2.5rem;
+}
+
+.card__text-container h1 {
+  margin-bottom: 0.9rem;
+  letter-spacing: 0.03em;
+}
+
+.card__text-container h1 .age {
+  /* margin-left: 0.9rem; */
+  font-weight: 400;
+  color: var(--text-secondary);
+}
+
+.card__text-container p {
+  font-size: var(--font-size-500);
+  color: var(--text-secondary);
+}
+
+.card__stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 0;
+  text-align: center;
+  border-top: 1px solid var(--accent-primary);
+}
+
+.card__stats .stat:nth-child(2) {
+  margin-left: 4.9rem;
+  margin-right: 5.6rem;
+}
+
+.card__stats .stat h1 {
+  margin-bottom: 0.5rem;
+}
+
+.card__stats .stat h2 {
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  color: var(--text-secondary);
+}
+
+@media only screen and (max-width: 768px) {
+  .h_wrapper::before {
+    left: -751px;
+    top: -606px;
+  }
+
+  .h_wrapper::after {
+    top: 52.62%;
+    right: -118.4%;
+    bottom: -50.82%;
+    left: 43.73%;
+    width: 65.5rem;
+    height: 65.5rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .card {
+    width: 32.6rem;
+  }
+}
